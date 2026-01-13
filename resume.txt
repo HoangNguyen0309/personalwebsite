@@ -1,0 +1,50 @@
+Hoang Nguyen
+(617) 594-2934 |hnguy@bu.edu |github.com/HoangNguyen0309
+Education
+Boston University Boston, MA
+Master of Science in Computer Science Expected May 2027
+Purdue University West Lafayette, IN
+Bachelor of Science in Computer Science (Semester Honors) Dec 2024
+Experience
+FPT Software Vietnam
+Software Engineer Intern |Java, TypeScript May 2024 – Aug 2024
+•Delivered backend integration for the TradeFlat supply chain finance app using Keycloak ,Jmix , and React .
+•Saved over $6,000 annually by replacing a paid PDF processing service with a custom JavaScript library extending
+PDF.js using TypeScript.
+•Built a secure SpringBoot REST API with token-based and role-based authentication for compliant data exports.
+•Implemented comprehensive audit logging and access-control enforcement in the REST API to meet financial
+regulatory and compliance requirements.
+Northwood Studios Remote (Poland)
+Software Engineer Intern |Python May 2025 – Aug 2025
+•Accelerated update response times for the SCP: Secret Lab Wiki by 20% through a Python program that uses the
+MediaWiki API to automatically detect and notify contributors of new game-related content in real time.
+•Improved cross-team communication by 62% by building a Python-based real-time translation service leveraging the
+Google Translation API to seamlessly convert Russian and Polish into English.
+•Enhanced mobile usability by consolidating and restructuring page layouts with responsive HTML and CSS, resulting
+in a cleaner, faster user experience.
+CMC Global Vietnam
+Software Engineer Intern |Java May 2022 – Aug 2022
+•Engineered a Spring Boot backend to process 20,000 user feedback forms, stored them in a SQL database, and
+retrieve them based on parameters.
+•Bolstered backend reliability by designing JUnit tests , uncovered and resolved 12+ logic and schema mismatches.
+•Fortified data integrity by standardizing entity relationships across multiple databases and authoring detailed
+documentation of naming conventions and schema mappings.
+Projects
+PredictPurdue |Python, Flask, React, SQL, BeautifulSoup Jan 2024 – May 2024
+•Predicted rental prices near Purdue University with 85% accuracy using a NumPy–Pandas linear regression model.
+•Developed an automated scraping pipeline that updates 3,000+ rental listings per week from major rental sites.
+•Integrated caching for recent rental predictions, reducing prediction latency by 30% .
+•Delivered real-time predictions using a web app with Flask backend and React frontend, used by 2000+ users.
+Excel to Wiki Upload |C++, Flask, JavaScript May 2021 – Jun 2021
+•Cut table formatting time by 70% for 1,000+ monthly users with a C++ MediaWiki-to-Excel table converter.
+•Designed a web interface (JavaScript + Flask) for seamless upload and file conversion with 100% success rate.
+•Handled 10,000+ monthly requests and 1,000+ unique users by generating downloadable .txt or .xlsx outputs.
+PurdueHub |React.js, Node.js, SQL, AWS Oct 2020
+•Launched PurdueHub, an engagement portal where students can discover, and discuss campus events.
+•Led a 5-person Scrum team to deliver features like event creation, comments, and “friends attending” lists.
+•Built a full-stack campus events site supporting 500+ listings with real-time React updates.
+•Implemented login, registration, and admin functionalities with Node.js backend.
+Technical Skills
+Languages : JavaScript, TypeScript, Java, Python, C++, SQL, HTML/CSS
+Frameworks and Tools : React.js, Flask, Spring, AWS, Pandas, Hibernate, Qiskit, JUnit, TensorFlow
+Relevant coursework : Data Structure, Algorithms, Machine Learning, Systems Programming, OOP
