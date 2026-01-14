@@ -337,7 +337,7 @@
       width: 100%;
       max-width: 1400px;
       margin: 0 auto;
-      min-height: 700px;
+      min-height: 900px;
       padding: 0 30px;
     }
     .commit-wall-display .calendar {
@@ -347,19 +347,19 @@
       width: 100%;
       max-width: 1200px;
       height: auto;
-      min-height: 600px;
+      min-height: 800px;
       margin: 0 auto;
     }
     .commit-wall-display .calendar-graph {
-      padding: 30px 20px;
+      padding: 40px 20px;
       text-align: center;
     }
     .commit-wall-display .calendar-graph rect {
       stroke: none;
-      rx: 8;
-      ry: 8;
-      width: 50px !important;
-      height: 50px !important;
+      rx: 16;
+      ry: 16;
+      width: 100px !important;
+      height: 100px !important;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .commit-wall-display .calendar-graph text,
@@ -387,7 +387,7 @@
       display: none !important;
     }
     .commit-wall-display .ContributionCalendar-day {
-      border-radius: 8px;
+      border-radius: 16px;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       cursor: pointer;
       position: relative;
@@ -413,31 +413,43 @@
       z-index: 20;
     }
     .commit-wall-display .ContributionCalendar-day[data-level='0'] {
-      background: linear-gradient(135deg, color-mix(in srgb, var(--bg) 98%, var(--accent) 2%), color-mix(in srgb, var(--bg) 95%, var(--accent) 5%));
+      background: linear-gradient(135deg, color-mix(in srgb, var(--bg) 95%, var(--accent) 5%), color-mix(in srgb, var(--bg) 90%, var(--accent) 10%));
       border: 2px solid var(--border);
       animation: pulse-subtle 4s ease-in-out infinite;
     }
     .commit-wall-display .ContributionCalendar-day[data-level='1'] {
-      background: linear-gradient(135deg, color-mix(in srgb, var(--panel) 80%, var(--accent) 20%), color-mix(in srgb, var(--panel) 60%, var(--accent) 40%));
-      border: 2px solid color-mix(in srgb, var(--accent) 30%, var(--border) 70%);
+      background: linear-gradient(135deg,
+        color-mix(in srgb, var(--accent) 15%, var(--panel) 85%),
+        color-mix(in srgb, var(--accent) 25%, var(--panel) 75%)
+      );
+      border: 2px solid color-mix(in srgb, var(--accent) 20%, var(--border) 80%);
       animation: float 6s ease-in-out infinite;
     }
     .commit-wall-display .ContributionCalendar-day[data-level='2'] {
-      background: linear-gradient(135deg, color-mix(in srgb, var(--panel) 50%, var(--accent) 50%), color-mix(in srgb, var(--panel) 30%, var(--accent) 70%));
-      border: 2px solid color-mix(in srgb, var(--accent) 50%, var(--border) 50%);
+      background: linear-gradient(135deg,
+        color-mix(in srgb, var(--accent) 35%, var(--panel) 65%),
+        color-mix(in srgb, var(--accent) 45%, var(--panel) 55%)
+      );
+      border: 2px solid color-mix(in srgb, var(--accent) 40%, var(--border) 60%);
       animation: float 6s ease-in-out infinite reverse;
     }
     .commit-wall-display .ContributionCalendar-day[data-level='3'] {
-      background: linear-gradient(135deg, color-mix(in srgb, var(--panel) 20%, var(--accent) 80%), color-mix(in srgb, var(--panel) 10%, var(--accent) 90%));
-      border: 2px solid color-mix(in srgb, var(--accent) 70%, var(--border) 30%);
+      background: linear-gradient(135deg,
+        color-mix(in srgb, var(--accent) 55%, var(--panel) 45%),
+        color-mix(in srgb, var(--accent) 65%, var(--panel) 35%)
+      );
+      border: 2px solid color-mix(in srgb, var(--accent) 60%, var(--border) 40%);
       animation: float 6s ease-in-out infinite;
       box-shadow: 0 0 15px color-mix(in srgb, var(--accent) 50%, transparent 50%);
     }
     .commit-wall-display .ContributionCalendar-day[data-level='4'] {
-      background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 70%, var(--text) 30%));
+      background: linear-gradient(135deg,
+        color-mix(in srgb, var(--accent) 75%, var(--panel) 25%),
+        color-mix(in srgb, var(--accent) 85%, var(--panel) 15%)
+      );
       border: 2px solid var(--accent);
       animation: glow 2s ease-in-out infinite alternate;
-      box-shadow: 0 0 25px color-mix(in srgb, var(--accent) 60%, transparent 40%), 0 0 50px color-mix(in srgb, var(--accent) 30%, transparent 70%);
+      box-shadow: 0 0 25px color-mix(in srgb, var(--accent) 70%, transparent 30%), 0 0 50px color-mix(in srgb, var(--accent) 40%, transparent 60%);
     }
     footer {
       text-align: center;
@@ -471,13 +483,13 @@
         padding: 0 10px;
       }
       .commit-wall-display .calendar-graph rect {
-        width: 25px !important;
-        height: 25px !important;
-        rx: 4;
-        ry: 4;
+        width: 50px !important;
+        height: 50px !important;
+        rx: 8;
+        ry: 8;
       }
       .commit-wall-display .ContributionCalendar-day {
-        border-radius: 4px;
+        border-radius: 8px;
       }
       #commits {
         width: 100vw;
@@ -511,7 +523,7 @@
         <a href="#resume">Resume</a>
       </div>
     </div>
-    <div class="palette-switch" aria-label="Color palette switcher">
+    <!-- <div class="palette-switch" aria-label="Color palette switcher" style="display: none;">
       <button type="button" data-palette="deepsea">Deep Sea</button>
       <button type="button" data-palette="refresh">Refreshing Summer Fun</button>
       <button type="button" data-palette="vivid">Vivid Nightfall</button>
@@ -524,7 +536,28 @@
       <button type="button" data-palette="peach">Peaching Delight</button>
       <button type="button" data-palette="softpink">Soft Pink Delight</button>
       <button type="button" data-palette="autumn">Autumn Harvest</button>
-    </div>
+      <button type="button" data-palette="sunset">Sunset Glow</button>
+      <button type="button" data-palette="lavender">Lavender Dream</button>
+      <button type="button" data-palette="mint">Mint Fresh</button>
+      <button type="button" data-palette="coral">Coral Reef</button>
+      <button type="button" data-palette="sapphire">Sapphire Sky</button>
+      <button type="button" data-palette="gold">Golden Hour</button>
+      <button type="button" data-palette="rose">Rose Garden</button>
+      <button type="button" data-palette="teal">Teal Waters</button>
+      <button type="button" data-palette="violet">Violet Nights</button>
+      <button type="button" data-palette="crimson">Crimson Dawn</button>
+      <button type="button" data-palette="emerald">Emerald Forest</button>
+      <button type="button" data-palette="amber">Amber Glow</button>
+      <button type="button" data-palette="indigo">Indigo Depths</button>
+      <button type="button" data-palette="turquoise">Turquoise Waters</button>
+      <button type="button" data-palette="magenta">Magenta Magic</button>
+      <button type="button" data-palette="lime">Lime Energy</button>
+      <button type="button" data-palette="cyan">Cyan Waves</button>
+      <button type="button" data-palette="orange">Orange Sunset</button>
+      <button type="button" data-palette="plum">Plum Paradise</button>
+      <button type="button" data-palette="slate">Slate Modern</button>
+      <button type="button" data-palette="forest">Forest Whisper</button>
+    </div> -->
   </header>
 
   <main>
@@ -569,155 +602,33 @@
       <div class="commit-wall-display"></div>
     </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <p style="color: var(--muted); margin: 0;">
-        I enjoy building reliable backends, secure APIs, and data-driven features. I've shipped integrations for finance platforms, automation for large content sites, and full-stack tools for student communities. Currently pursuing my M.S. in Computer Science at Boston University after completing my B.S. at Purdue University.
-      </p>
-    </section>
-
-    <section id="education">
-      <h2>Education</h2>
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Master of Science in Computer Science</div>
-          <div class="item-meta">Boston University, Boston, MA · Expected Dec 2027</div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Bachelor of Science in Computer Science (Semester Honors)</div>
-          <div class="item-meta">Purdue University, West Lafayette, IN · Dec 2024</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <h2>Work Experience</h2>
-      <div class="item">
-        <div class="item-header">
-          <div class="company">
-            <a class="company-link" href="https://fpt.com/en" target="_blank" rel="noopener">
-              <span class="logo-badge fpt" aria-label="FPT Corporation">
-              <svg viewBox="0 0 160 110" aria-hidden="true">
-                <rect x="6" y="12" width="46" height="86" rx="10" fill="#f7941d"/>
-                <rect x="57" y="12" width="46" height="86" rx="10" fill="#00a7e1"/>
-                <rect x="108" y="12" width="46" height="86" rx="10" fill="#00b14f"/>
-                <text x="28" y="70" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#f8f9fb">F</text>
-                <text x="80" y="70" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#f8f9fb">P</text>
-                <text x="132" y="70" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#f8f9fb">T</text>
-              </svg>
-              </span>
-              <div class="item-title">FPT Corporation · Software Engineer Intern</div>
-            </a>
-          </div>
-          <div class="item-meta">Vietnam · May 2024 – Aug 2024</div>
-        </div>
-        <ul class="tight">
-          <li>Reduced annual costs by over $6,000 by replacing a paid PDF processing service with a custom-built TypeScript library extending PDF.js, eliminating dependency on commercial plugins.</li>
-          <li>Enabled secure user access and compliant data export by designing a Spring Boot REST API with token-based authentication and role-based authorization, including audit logging.</li>
-          <li>Delivered a secure backend system for TradeFlat's Supply Chain Finance app using Keycloak-integrated flows with Jmix and React.</li>
-        </ul>
-      </div>
-      <div class="item">
-        <div class="item-header">
-          <div class="company">
-            <a class="company-link" href="https://store.steampowered.com/developer/NWStudios" target="_blank" rel="noopener">
-              <span class="logo-badge nws" aria-label="Northwood Studios">
-                <img src="https://avatars.fastly.steamstatic.com/ebbd3f619a41db94a6eb7aa417ff78a91084b1b1_full.jpg" alt="Northwood Studios logo">
-              </span>
-              <div class="item-title">Northwood Studios · Wiki Developer</div>
-            </a>
-          </div>
-          <div class="item-meta">Poland · Feb 2021 – Present</div>
-        </div>
-        <ul class="tight">
-          <li>Accelerated Wiki update response time by 20% with a Python monitoring service using the MediaWiki API to notify contributors in real time.</li>
-          <li>Improved cross-team messaging by 62% with a real-time translation service built on the Google Translation API.</li>
-          <li>Enhanced mobile Wiki interfaces by restructuring content and layouts with HTML/CSS.</li>
-        </ul>
-      </div>
-      <div class="item">
-        <div class="item-header">
-          <div class="company">
-            <a class="company-link" href="https://www.cmc.com.vn/" target="_blank" rel="noopener">
-              <span class="logo-badge cmc" aria-label="CMC Global">
-                <img src="https://media.licdn.com/dms/image/v2/C4E0BAQFSjtxKev2A3A/company-logo_200_200/company-logo_200_200/0/1631336985398?e=1769644800&v=beta&t=aRW9-jICkRoB24sMAN54bYnJCVV772T08zW6jIfD0WA" alt="CMC Corporation logo">
-              </span>
-              <div class="item-title">CMC Global · Software Engineer Intern</div>
-            </a>
-          </div>
-          <div class="item-meta">Vietnam · May 2022 – Aug 2022</div>
-        </div>
-        <ul class="tight">
-          <li>Engineered backend services for processing ~2,000 user inputs using Spring Boot, Hibernate ORM, and Maven.</li>
-          <li>Designed JUnit test suites that uncovered and resolved over a dozen logic/schema mismatches.</li>
-          <li>Standardized entity relationships across databases and documented naming conventions to improve maintainability.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
+    <section class="navigation-cards">
+      <h2>Explore More</h2>
       <div class="grid">
         <div class="card">
-          <h3><a href="https://github.com/HoangNguyen0309/PredictPurdue" target="_blank" rel="noopener">Predict Rental Price Around Purdue University</a></h3>
-          <p>Jan 2024 – May 2024</p>
-          <ul class="tight">
-            <li>Scraped and stored 3,000+ rental listings using Python, BeautifulSoup, and automated SQL pipelines.</li>
-            <li>Predicted rental prices with 85% accuracy via NumPy/Pandas linear regression.</li>
-            <li>Delivered real-time predictions through a Flask + React full-stack app supporting 500+ users.</li>
-          </ul>
+          <h3><a href="about.html">About Me</a></h3>
+          <p>Learn more about my background, interests, and what drives my passion for software engineering.</p>
         </div>
         <div class="card">
-          <h3><a href="https://github.com/HoangNguyen0309/Wiki-Table-Generator" target="_blank" rel="noopener">Excel to Wiki Upload</a></h3>
-          <p>May 2021 – Jun 2021</p>
-          <ul class="tight">
-            <li>Developed a C++ tool converting between MediaWiki tables and Excel, cutting formatting time by 70% for 1,000+ wiki users.</li>
-            <li>Built a JS frontend + Flask backend enabling 10,000 monthly requests with reliable .txt/.xlsx downloads.</li>
-          </ul>
+          <h3><a href="education.html">Education</a></h3>
+          <p>My academic journey from Purdue University to Boston University.</p>
         </div>
         <div class="card">
-          <h3><a href="https://github.com/HoangNguyen0309/PurdueHub" target="_blank" rel="noopener">Social Site for Purdue Students</a></h3>
-          <p>Oct 2020</p>
-          <ul class="tight">
-            <li>Led a 5-person Scrum team as Scrum Master; coordinated sprints, standups, and task delegation.</li>
-            <li>Built a React/Node/SQL campus event platform deployed on AWS with 500+ listings and real-time updates.</li>
-            <li>Implemented login, registration, and admin tooling while driving core backend architecture.</li>
-          </ul>
+          <h3><a href="experience.html">Work Experience</a></h3>
+          <p>Professional roles and internships that have shaped my career in software development.</p>
         </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="pill-row">
-        <span class="pill">JavaScript</span>
-        <span class="pill">TypeScript</span>
-        <span class="pill">Java</span>
-        <span class="pill">Python</span>
-        <span class="pill">C++</span>
-        <span class="pill">SQL</span>
-        <span class="pill">HTML/CSS</span>
-        <span class="pill">React.js</span>
-        <span class="pill">Flask</span>
-        <span class="pill">Spring</span>
-        <span class="pill">AWS</span>
-        <span class="pill">Pandas</span>
-        <span class="pill">Hibernate</span>
-        <span class="pill">Qiskit</span>
-        <span class="pill">JUnit</span>
-        <span class="pill">TensorFlow</span>
-      </div>
-      <p class="subtitle" style="margin-top: 14px;">Coursework: Data Structures, Algorithms, Machine Learning, Systems Programming, OOP</p>
-    </section>
-
-
-    <section id="resume">
-      <h2>Resume</h2>
-      <div class="actions">
-        <a class="btn" href="HoangNguyen_Resume.pdf" target="_blank" rel="noopener">Download PDF</a>
-        <a class="btn secondary" href="mailto:hnguy@bu.edu">Reach out</a>
+        <div class="card">
+          <h3><a href="projects.html">Projects</a></h3>
+          <p>Personal projects and technical achievements that showcase my skills and creativity.</p>
+        </div>
+        <div class="card">
+          <h3><a href="skills.html">Skills & Technologies</a></h3>
+          <p>The programming languages, frameworks, and tools I work with.</p>
+        </div>
+        <div class="card">
+          <h3><a href="resume.html">Resume</a></h3>
+          <p>Download my resume or get in touch for opportunities.</p>
+        </div>
       </div>
     </section>
   </main>
@@ -846,6 +757,196 @@
           muted: "#f0cfe2",
           border: "#321c2a",
           card: "#1a0b14"
+        },
+        // New palettes added
+        sunset: {
+          bg: "#2a1810",
+          panel: "#3d2418",
+          accent: "#ff7b54",
+          text: "#fff8f5",
+          muted: "#e8b8a8",
+          border: "#4a2e20",
+          card: "#25140c"
+        },
+        lavender: {
+          bg: "#1a1625",
+          panel: "#252038",
+          accent: "#c77dff",
+          text: "#f8f6ff",
+          muted: "#d4c7e8",
+          border: "#302b42",
+          card: "#171223"
+        },
+        mint: {
+          bg: "#0f1f1a",
+          panel: "#172e26",
+          accent: "#7fffd4",
+          text: "#f0fffc",
+          muted: "#b8e8d8",
+          border: "#1f3a30",
+          card: "#0e1a15"
+        },
+        coral: {
+          bg: "#2a1414",
+          panel: "#3d1f1f",
+          accent: "#ff6b6b",
+          text: "#fff5f5",
+          muted: "#e8b8b8",
+          border: "#4a2828",
+          card: "#241010"
+        },
+        sapphire: {
+          bg: "#0f141f",
+          panel: "#17202e",
+          accent: "#4facfe",
+          text: "#f0f4ff",
+          muted: "#a8c7e8",
+          border: "#1f283a",
+          card: "#0e121a"
+        },
+        gold: {
+          bg: "#2a1f0f",
+          panel: "#3d2e17",
+          accent: "#ffd700",
+          text: "#fffef0",
+          muted: "#e8d8b8",
+          border: "#4a3d1f",
+          card: "#251d0e"
+        },
+        rose: {
+          bg: "#251619",
+          panel: "#382025",
+          accent: "#ff69b4",
+          text: "#fff0f8",
+          muted: "#e8b8d8",
+          border: "#422a30",
+          card: "#1f1215"
+        },
+        teal: {
+          bg: "#0f1f1f",
+          panel: "#172e2e",
+          accent: "#20b2aa",
+          text: "#f0fffc",
+          muted: "#b8e8e0",
+          border: "#1f3a3a",
+          card: "#0e1a1a"
+        },
+        violet: {
+          bg: "#1f0f2a",
+          panel: "#2e173d",
+          accent: "#8a2be2",
+          text: "#f8f0ff",
+          muted: "#d4b8e8",
+          border: "#3a1f4a",
+          card: "#1a0e25"
+        },
+        crimson: {
+          bg: "#2a0f14",
+          panel: "#3d171f",
+          accent: "#dc143c",
+          text: "#fff0f2",
+          muted: "#e8b8c4",
+          border: "#4a1f28",
+          card: "#250e12"
+        },
+        emerald: {
+          bg: "#0f2a14",
+          panel: "#173d1f",
+          accent: "#50c878",
+          text: "#f0fff2",
+          muted: "#b8e8c4",
+          border: "#1f4a28",
+          card: "#0e2512"
+        },
+        amber: {
+          bg: "#2a200f",
+          panel: "#3d2f17",
+          accent: "#ffbf00",
+          text: "#fff9f0",
+          muted: "#e8ddb8",
+          border: "#4a3f1f",
+          card: "#251c0e"
+        },
+        indigo: {
+          bg: "#14102a",
+          panel: "#1f173d",
+          accent: "#4b0082",
+          text: "#f0f0ff",
+          muted: "#b8b8e8",
+          border: "#28204a",
+          card: "#100e25"
+        },
+        turquoise: {
+          bg: "#0f252a",
+          panel: "#17383d",
+          accent: "#40e0d0",
+          text: "#f0fffc",
+          muted: "#b8e8e4",
+          border: "#1f4a52",
+          card: "#0e2125"
+        },
+        magenta: {
+          bg: "#2a0f25",
+          panel: "#3d1738",
+          accent: "#ff00ff",
+          text: "#fff0ff",
+          muted: "#e8b8e8",
+          border: "#4a1f47",
+          card: "#250e22"
+        },
+        lime: {
+          bg: "#1f2a0f",
+          panel: "#2e3d17",
+          accent: "#32cd32",
+          text: "#f4fff0",
+          muted: "#c4e8b8",
+          border: "#3a4a1f",
+          card: "#1a250e"
+        },
+        cyan: {
+          bg: "#0f252a",
+          panel: "#17383d",
+          accent: "#00ffff",
+          text: "#f0ffff",
+          muted: "#b8e8e8",
+          border: "#1f4a4a",
+          card: "#0e2125"
+        },
+        orange: {
+          bg: "#2a1a0f",
+          panel: "#3d2817",
+          accent: "#ff8c00",
+          text: "#fff7f0",
+          muted: "#e8cdb8",
+          border: "#4a371f",
+          card: "#25160e"
+        },
+        plum: {
+          bg: "#200f2a",
+          panel: "#2f173d",
+          accent: "#dda0dd",
+          text: "#faf0ff",
+          muted: "#e4c7e8",
+          border: "#3f1f4a",
+          card: "#1c0e25"
+        },
+        slate: {
+          bg: "#1a1f25",
+          panel: "#252e38",
+          accent: "#708090",
+          text: "#f5f7fa",
+          muted: "#c4d1d9",
+          border: "#2a3542",
+          card: "#151a22"
+        },
+        forest: {
+          bg: "#0f1a0f",
+          panel: "#172517",
+          accent: "#228b22",
+          text: "#f0f8f0",
+          muted: "#b8d4b8",
+          border: "#1f2f1f",
+          card: "#0e150e"
         }
       };
 

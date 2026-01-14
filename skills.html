@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills - Hoang Nguyen | Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c111d;
+      --panel: #111827;
+      --accent: #5fb3ff;
+      --accent-soft: rgba(95,179,255,0.12);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --card: #0f172a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at 10% 20%, rgba(95,179,255,0.12), transparent 35%),
+                  radial-gradient(circle at 90% 10%, rgba(95,179,255,0.08), transparent 30%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 1.5s ease, color 1.5s ease;
+    }
+    a { color: inherit; text-decoration: none; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(12,17,29,0.85);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .nav .brand {
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      transition: color 1.5s ease;
+    }
+    .nav .links {
+      display: flex;
+      gap: 16px;
+      font-size: 14px;
+      color: var(--muted);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav a:hover { color: var(--accent); }
+    .palette-switch {
+      max-width: 1080px;
+      margin: 0 auto;
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+      font-size: 13px;
+    }
+    .palette-switch button {
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 6px 14px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 500;
+      transition: background 0.2s ease, border 0.2s ease;
+    }
+    .palette-switch button:hover,
+    .palette-switch button:focus-visible {
+      outline: none;
+      background: rgba(255,255,255,0.12);
+      border-color: var(--accent);
+    }
+    .palette-switch button.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #061125;
+    }
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    section {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 22px;
+      background: var(--card);
+      position: relative;
+    }
+    section h2 {
+      margin: 0 0 16px;
+      font-size: clamp(34px, 6vw, 58px);
+      letter-spacing: 0.35px;
+      color: var(--accent);
+    }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .pill {
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: rgba(95,179,255,0.14);
+      color: var(--text);
+      font-size: 12px;
+      border: 1px solid var(--border);
+    }
+    .subtitle {
+      color: var(--muted);
+      margin-top: 14px;
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 18px 0 30px;
+    }
+    @media (max-width: 640px) {
+      .nav { padding: 12px 16px; }
+      main { padding: 24px 16px 64px; }
+      .actions { flex-direction: column; align-items: flex-start; }
+      .item-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css">
+</head>
+<body>
+  <header id="home">
+    <div class="nav">
+      <div class="brand"><a href="index.html">Hoang Nguyen</a></div>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="resume.html">Resume</a>
+      </div>
+    </div>
+    <!-- <div class="palette-switch" aria-label="Color palette switcher" style="display: none;">
+      <button type="button" data-palette="deepsea">Deep Sea</button>
+      <button type="button" data-palette="refresh">Refreshing Summer Fun</button>
+      <button type="button" data-palette="vivid">Vivid Nightfall</button>
+      <button type="button" data-palette="midnight">Midknight Sky</button>
+      <button type="button" data-palette="olive">Olive Garden Feast</button>
+      <button type="button" data-palette="berry">Berry Bliss</button>
+      <button type="button" data-palette="golden">Golden Summer Fields</button>
+      <button type="button" data-palette="earthy">Earthy Tones</button>
+      <button type="button" data-palette="fiery">Fiery Ocean</button>
+      <button type="button" data-palette="peach">Peaching Delight</button>
+      <button type="button" data-palette="softpink">Soft Pink Delight</button>
+      <button type="button" data-palette="autumn">Autumn Harvest</button>
+      <button type="button" data-palette="sunset">Sunset Glow</button>
+      <button type="button" data-palette="lavender">Lavender Dream</button>
+      <button type="button" data-palette="mint">Mint Fresh</button>
+      <button type="button" data-palette="coral">Coral Reef</button>
+      <button type="button" data-palette="sapphire">Sapphire Sky</button>
+      <button type="button" data-palette="gold">Golden Hour</button>
+      <button type="button" data-palette="rose">Rose Garden</button>
+      <button type="button" data-palette="teal">Teal Waters</button>
+      <button type="button" data-palette="violet">Violet Nights</button>
+      <button type="button" data-palette="crimson">Crimson Dawn</button>
+      <button type="button" data-palette="emerald">Emerald Forest</button>
+      <button type="button" data-palette="amber">Amber Glow</button>
+      <button type="button" data-palette="indigo">Indigo Depths</button>
+      <button type="button" data-palette="turquoise">Turquoise Waters</button>
+      <button type="button" data-palette="magenta">Magenta Magic</button>
+      <button type="button" data-palette="lime">Lime Energy</button>
+      <button type="button" data-palette="cyan">Cyan Waves</button>
+      <button type="button" data-palette="orange">Orange Sunset</button>
+      <button type="button" data-palette="plum">Plum Paradise</button>
+      <button type="button" data-palette="slate">Slate Modern</button>
+      <button type="button" data-palette="forest">Forest Whisper</button>
+    </div> -->
+  </header>
+
+  <main>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="pill-row">
+        <span class="pill">JavaScript</span>
+        <span class="pill">TypeScript</span>
+        <span class="pill">Java</span>
+        <span class="pill">Python</span>
+        <span class="pill">C++</span>
+        <span class="pill">SQL</span>
+        <span class="pill">HTML/CSS</span>
+        <span class="pill">React.js</span>
+        <span class="pill">Flask</span>
+        <span class="pill">Spring</span>
+        <span class="pill">AWS</span>
+        <span class="pill">Pandas</span>
+        <span class="pill">Hibernate</span>
+        <span class="pill">Qiskit</span>
+        <span class="pill">JUnit</span>
+        <span class="pill">TensorFlow</span>
+      </div>
+      <p class="subtitle">Coursework: Data Structures, Algorithms, Machine Learning, Systems Programming, OOP</p>
+    </section>
+  </main>
+
+  <footer>
+    Last updated: January 12, 2026 · Built from Hoang Nguyen's resume.
+  </footer>
+
+  <script>
+    (() => {
+      const palettes = {
+        olive: {
+          bg: "#182117",
+          panel: "#233122",
+          accent: "#c6d292",
+          text: "#f7f3eb",
+          muted: "#c8d3b5",
+          border: "#2f3c29",
+          card: "#182716"
+        },
+        golden: {
+          bg: "#1b1406",
+          panel: "#2a210b",
+          accent: "#f3c84d",
+          text: "#fff7ef",
+          muted: "#d6c39a",
+          border: "#3c2f10",
+          card: "#1b1508"
+        },
+        midnight: {
+          bg: "#030618",
+          panel: "#070f24",
+          accent: "#9dd2ff",
+          text: "#e6efff",
+          muted: "#9bb4d7",
+          border: "#101b3f",
+          card: "#0b1430"
+        },
+        refresh: {
+          bg: "#0c1c25",
+          panel: "#12212c",
+          accent: "#49c6eb",
+          text: "#e8f7ff",
+          muted: "#c1dced",
+          border: "#0d2532",
+          card: "#0c1923"
+        },
+        peach: {
+          bg: "#1a090f",
+          panel: "#2a1119",
+          accent: "#ff957a",
+          text: "#ffe7e0",
+          muted: "#e1b7a6",
+          border: "#340f1a",
+          card: "#18080f"
+        },
+        fiery: {
+          bg: "#041b25",
+          panel: "#08233a",
+          accent: "#ff6b35",
+          text: "#f9f8f4",
+          muted: "#fddcb0",
+          border: "#0a1c2c",
+          card: "#051324"
+        },
+        autumn: {
+          bg: "#1d1302",
+          panel: "#2d1f0c",
+          accent: "#ffb347",
+          text: "#fff3d7",
+          muted: "#d8b08f",
+          border: "#3a2613",
+          card: "#1b1508"
+        },
+        earthy: {
+          bg: "#0f1a0b",
+          panel: "#17220f",
+          accent: "#f4c95d",
+          text: "#f9f7ef",
+          muted: "#cfd2c0",
+          border: "#1d2a16",
+          card: "#0e1b0d"
+        },
+        deepsea: {
+          bg: "#02131b",
+          panel: "#032636",
+          accent: "#3feadf",
+          text: "#d7f3f7",
+          muted: "#9ad6d9",
+          border: "#06333c",
+          card: "#011b25"
+        },
+        vivid: {
+          bg: "#020c16",
+          panel: "#03122d",
+          accent: "#6e8bff",
+          text: "#dde3ff",
+          muted: "#aab9ff",
+          border: "#07122b",
+          card: "#020914"
+        },
+        berry: {
+          bg: "#0c0b1b",
+          panel: "#13112c",
+          accent: "#d36cff",
+          text: "#f9f9ff",
+          muted: "#c9b8de",
+          border: "#1b1b2c",
+          card: "#0a0915"
+        },
+        softpink: {
+          bg: "#1b0f16",
+          panel: "#261523",
+          accent: "#ff9fb2",
+          text: "#fff0f8",
+          muted: "#f0cfe2",
+          border: "#321c2a",
+          card: "#1a0b14"
+        },
+        // New palettes added
+        sunset: {
+          bg: "#2a1810",
+          panel: "#3d2418",
+          accent: "#ff7b54",
+          text: "#fff8f5",
+          muted: "#e8b8a8",
+          border: "#4a2e20",
+          card: "#25140c"
+        },
+        lavender: {
+          bg: "#1a1625",
+          panel: "#252038",
+          accent: "#c77dff",
+          text: "#f8f6ff",
+          muted: "#d4c7e8",
+          border: "#302b42",
+          card: "#171223"
+        },
+        mint: {
+          bg: "#0f1f1a",
+          panel: "#172e26",
+          accent: "#7fffd4",
+          text: "#f0fffc",
+          muted: "#b8e8d8",
+          border: "#1f3a30",
+          card: "#0e1a15"
+        },
+        coral: {
+          bg: "#2a1414",
+          panel: "#3d1f1f",
+          accent: "#ff6b6b",
+          text: "#fff5f5",
+          muted: "#e8b8b8",
+          border: "#4a2828",
+          card: "#241010"
+        },
+        sapphire: {
+          bg: "#0f141f",
+          panel: "#17202e",
+          accent: "#4facfe",
+          text: "#f0f4ff",
+          muted: "#a8c7e8",
+          border: "#1f283a",
+          card: "#0e121a"
+        },
+        gold: {
+          bg: "#2a1f0f",
+          panel: "#3d2e17",
+          accent: "#ffd700",
+          text: "#fffef0",
+          muted: "#e8d8b8",
+          border: "#4a3d1f",
+          card: "#251d0e"
+        },
+        rose: {
+          bg: "#251619",
+          panel: "#382025",
+          accent: "#ff69b4",
+          text: "#fff0f8",
+          muted: "#e8b8d8",
+          border: "#422a30",
+          card: "#1f1215"
+        },
+        teal: {
+          bg: "#0f1f1f",
+          panel: "#172e2e",
+          accent: "#20b2aa",
+          text: "#f0fffc",
+          muted: "#b8e8e0",
+          border: "#1f3a3a",
+          card: "#0e1a1a"
+        },
+        violet: {
+          bg: "#1f0f2a",
+          panel: "#2e173d",
+          accent: "#8a2be2",
+          text: "#f8f0ff",
+          muted: "#d4b8e8",
+          border: "#3a1f4a",
+          card: "#1a0e25"
+        },
+        crimson: {
+          bg: "#2a0f14",
+          panel: "#3d171f",
+          accent: "#dc143c",
+          text: "#fff0f2",
+          muted: "#e8b8c4",
+          border: "#4a1f28",
+          card: "#250e12"
+        },
+        emerald: {
+          bg: "#0f2a14",
+          panel: "#173d1f",
+          accent: "#50c878",
+          text: "#f0fff2",
+          muted: "#b8e8c4",
+          border: "#1f4a28",
+          card: "#0e2512"
+        },
+        amber: {
+          bg: "#2a200f",
+          panel: "#3d2f17",
+          accent: "#ffbf00",
+          text: "#fff9f0",
+          muted: "#e8ddb8",
+          border: "#4a3f1f",
+          card: "#251c0e"
+        },
+        indigo: {
+          bg: "#14102a",
+          panel: "#1f173d",
+          accent: "#4b0082",
+          text: "#f0f0ff",
+          muted: "#b8b8e8",
+          border: "#28204a",
+          card: "#100e25"
+        },
+        turquoise: {
+          bg: "#0f252a",
+          panel: "#17383d",
+          accent: "#40e0d0",
+          text: "#f0fffc",
+          muted: "#b8e8e4",
+          border: "#1f4a52",
+          card: "#0e2125"
+        },
+        magenta: {
+          bg: "#2a0f25",
+          panel: "#3d1738",
+          accent: "#ff00ff",
+          text: "#fff0ff",
+          muted: "#e8b8e8",
+          border: "#4a1f47",
+          card: "#250e22"
+        },
+        lime: {
+          bg: "#1f2a0f",
+          panel: "#2e3d17",
+          accent: "#32cd32",
+          text: "#f4fff0",
+          muted: "#c4e8b8",
+          border: "#3a4a1f",
+          card: "#1a250e"
+        },
+        cyan: {
+          bg: "#0f252a",
+          panel: "#17383d",
+          accent: "#00ffff",
+          text: "#f0ffff",
+          muted: "#b8e8e8",
+          border: "#1f4a4a",
+          card: "#0e2125"
+        },
+        orange: {
+          bg: "#2a1a0f",
+          panel: "#3d2817",
+          accent: "#ff8c00",
+          text: "#fff7f0",
+          muted: "#e8cdb8",
+          border: "#4a371f",
+          card: "#25160e"
+        },
+        plum: {
+          bg: "#200f2a",
+          panel: "#2f173d",
+          accent: "#dda0dd",
+          text: "#faf0ff",
+          muted: "#e4c7e8",
+          border: "#3f1f4a",
+          card: "#1c0e25"
+        },
+        slate: {
+          bg: "#1a1f25",
+          panel: "#252e38",
+          accent: "#708090",
+          text: "#f5f7fa",
+          muted: "#c4d1d9",
+          border: "#2a3542",
+          card: "#151a22"
+        },
+        forest: {
+          bg: "#0f1a0f",
+          panel: "#172517",
+          accent: "#228b22",
+          text: "#f0f8f0",
+          muted: "#b8d4b8",
+          border: "#1f2f1f",
+          card: "#0e150e"
+        }
+      };
+
+      const buttons = document.querySelectorAll(".palette-switch button");
+      const cycleInterval = 5000;
+      function hexToHsl(hex) {
+        let cleaned = hex.replace("#", "");
+        if (cleaned.length === 3) cleaned = cleaned.split("").map((c) => c + c).join("");
+        const value = parseInt(cleaned, 16);
+        const r = ((value >> 16) & 255) / 255;
+        const g = ((value >> 8) & 255) / 255;
+        const b = (value & 255) / 255;
+        const max = Math.max(r, g, b);
+        const min = Math.min(r, g, b);
+        let h = 0;
+        const delta = max - min;
+        if (delta !== 0) {
+          if (max === r) {
+            h = ((g - b) / delta) % 6;
+          } else if (max === g) {
+            h = (b - r) / delta + 2;
+          } else {
+            h = (r - g) / delta + 4;
+          }
+        }
+        h = Math.round(h * 60);
+        if (h < 0) h += 360;
+        const l = (max + min) / 2;
+        const s = delta === 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+        return { h, s, l };
+      }
+      const paletteKeys = Object.keys(palettes).sort((a, b) => {
+        const ah = hexToHsl(palettes[a].accent);
+        const bh = hexToHsl(palettes[b].accent);
+        if (ah.h !== bh.h) return ah.h - bh.h;
+        if (ah.s !== bh.s) return ah.s - bh.s;
+        return ah.l - bh.l;
+      });
+      const switcher = document.querySelector(".palette-switch");
+      if (switcher) {
+        paletteKeys.forEach((key) => {
+          const btn = switcher.querySelector(`button[data-palette="${key}"]`);
+          if (btn) switcher.appendChild(btn);
+        });
+      }
+      let autoIndex = 0;
+      let autoTimer;
+
+      function hexToRgb(hex) {
+        let cleaned = hex.replace("#", "");
+        if (cleaned.length === 3) {
+          cleaned = cleaned.split("").map((c) => c + c).join("");
+        }
+        const value = parseInt(cleaned, 16);
+        return {
+          r: (value >> 16) & 255,
+          g: (value >> 8) & 255,
+          b: value & 255
+        };
+      }
+
+      function restartCycle(index) {
+        autoIndex = index;
+        clearInterval(autoTimer);
+        autoTimer = setInterval(cyclePalette, cycleInterval);
+      }
+
+      function applyPalette(name, restart = true) {
+        const palette = palettes[name];
+        if (!palette) return;
+        Object.entries(palette).forEach(([varName, value]) => {
+          document.documentElement.style.setProperty(`--${varName}`, value);
+        });
+        const accentRgb = hexToRgb(palette.accent);
+        document.documentElement.style.setProperty("--accent-soft", `rgba(${accentRgb.r}, ${accentRgb.g}, ${accentRgb.b}, 0.16)`);
+        buttons.forEach((btn) => {
+          const isActive = btn.dataset.palette === name;
+          btn.classList.toggle("active", isActive);
+          btn.setAttribute("aria-pressed", String.isActive);
+        });
+        const index = paletteKeys.indexOf(name);
+        if (index >= 0) {
+          autoIndex = index;
+          if (restart) {
+            restartCycle(autoIndex);
+          }
+        }
+      }
+
+      function cyclePalette() {
+        autoIndex = (autoIndex + 1) % paletteKeys.length;
+        applyPalette(paletteKeys[autoIndex], false);
+      }
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => applyPalette(button.dataset.palette));
+      });
+
+      applyPalette(paletteKeys[0]);
+    })();
+  </script>
+</body>
+</html>
